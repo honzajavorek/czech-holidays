@@ -38,7 +38,7 @@ Two shortcuts are available:
     >>> holidays.easter
     Holiday(2013, 4, 1)
     >>> holidays.christmas
-    Holiday(2013, 4, 1)
+    Holiday(2013, 12, 24)
 
 Otherwise ``holidays`` behaves as an ordinary ``list``. If you need holidays
 for different year, you can make your own ``Holidays`` object:
