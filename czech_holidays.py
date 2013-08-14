@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
 
 __title__ = 'czech-holidays'
@@ -33,68 +34,68 @@ class Holidays(list):
         self.extend((
             Holiday(
                 year, 1, 1,
-                u"Nový rok",
-                u"New Year's Day",
+                "Nový rok",
+                "New Year's Day",
             ),
             Holiday(
                 year, 1, 1,
-                u"Den obnovy samostatného českého státu",
-                u"Restoration Day of the Independent Czech State",
+                "Den obnovy samostatného českého státu",
+                "Restoration Day of the Independent Czech State",
             ),
             Holiday(
                 easter.year, easter.month, easter.day,
-                u"Velikonoční pondělí",
-                u"Easter Monday",
+                "Velikonoční pondělí",
+                "Easter Monday",
             ),
             Holiday(
                 year, 5, 1,
-                u"Svátek práce",
-                u"Labour Day",
+                "Svátek práce",
+                "Labour Day",
             ),
             Holiday(
                 year, 5, 8,
-                u"Den vítězství",
-                u"Liberation Day",
+                "Den vítězství",
+                "Liberation Day",
             ),
             Holiday(
                 year, 7, 5,
-                u"Den slovanských věrozvěstů Cyrila a Metoděje",
-                u"Saints Cyril and Methodius Day",
+                "Den slovanských věrozvěstů Cyrila a Metoděje",
+                "Saints Cyril and Methodius Day",
             ),
             Holiday(
                 year, 7, 6,
-                u"Den upálení mistra Jana Husa",
-                u"Jan Hus Day",
+                "Den upálení mistra Jana Husa",
+                "Jan Hus Day",
             ),
             Holiday(
                 year, 9, 28,
-                u"Den české státnosti",
-                u"St. Wenceslas Day (Czech Statehood Day)",
+                "Den české státnosti",
+                "St. Wenceslas Day (Czech Statehood Day)",
             ),
             Holiday(
                 year, 10, 28,
-                u"Den vzniku samostatného československého státu",
-                u"Independent Czechoslovak State Day",
+                "Den vzniku samostatného československého státu",
+                "Independent Czechoslovak State Day",
             ),
             Holiday(
                 year, 11, 17,
-                u"Den boje za svobodu a demokracii",
-                u"Struggle for Freedom and Democracy Day",
+                "Den boje za svobodu a demokracii",
+                "Struggle for Freedom and Democracy Day",
             ),
             Holiday(
                 year, 12, 24,
-                u"Štědrý den",
-                u"Christmas Eve",
+                "Štědrý den",
+                "Christmas Eve",
             ),
             Holiday(
                 year, 12, 25,
-                u"1. svátek vánoční",
-                u"Christmas Day",
+                "1. svátek vánoční",
+                "Christmas Day",
             ),
             Holiday(
                 year, 12, 26,
-                u"2. svátek vánoční",
-                u"St. Stephen's Day (The Second Christmas Day)",
+                "2. svátek vánoční",
+                "St. Stephen's Day (The Second Christmas Day)",
             ),
         ))
 
