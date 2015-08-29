@@ -3,6 +3,7 @@
 
 import os
 import re
+import io
 import sys
 import shlex
 import subprocess
@@ -18,7 +19,7 @@ base_path = os.path.dirname(__file__)
 
 # version
 meta_file = os.path.join(base_path, 'czech_holidays.py')
-meta_file_contents = open(meta_file).read()
+meta_file_contents = io.open(meta_file, encoding='utf-8').read()
 meta = dict(re.findall(r'__([^_]+)__ = \'([^\']*)\'', meta_file_contents))
 
 
@@ -35,7 +36,7 @@ setup(
     name=meta['title'],
     version=meta['version'],
     description='Czech holidays on PyPI.',
-    long_description=open('README.rst').read(),
+    long_description=io.open('README.rst', encoding='utf-8').read(),
     author=meta['author'],
     author_email='jan.javorek@gmail.com',
     url='https://github.com/honzajavorek/czech-holidays',
