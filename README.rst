@@ -4,11 +4,6 @@ Czech Holidays
 
 Python package with `Czech public holidays <https://en.wikipedia.org/wiki/Public_holidays_in_the_Czech_Republic>`_.
 
-Status: ACTIVE
---------------
-
-Under active development and maintenance.
-
 Installation
 ------------
 
