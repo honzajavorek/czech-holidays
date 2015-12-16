@@ -49,6 +49,11 @@ class Holidays(list):
                 "Velikonoční pondělí",
                 "Easter Monday",
             ),
+             Holiday(
+                easter.year, easter.month, easter.day + 4,
+                "Velký pátek",
+                "Good Friday",
+            ),
             Holiday(
                 year, 5, 1,
                 "Svátek práce",
