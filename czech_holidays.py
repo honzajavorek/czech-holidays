@@ -50,7 +50,7 @@ class Holidays(list):
                 "Easter Monday",
             ),
              Holiday(
-                easter.year, easter.month, easter.day + 4,
+                easter.year, easter.month, easter.day - 3,
                 "Velký pátek",
                 "Good Friday",
             ),
