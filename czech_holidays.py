@@ -50,10 +50,10 @@ class Holidays(list):
                 "Easter Monday",
             ),
             Holiday(
-                easter.year, easter.month, easter.day - 3,
+                easter.year, easter.month, easter.day,
                 "Velký pátek",
                 "Good Friday",
-            ),
+            ) - timedelta(days=3),
             Holiday(
                 year, 5, 1,
                 "Svátek práce",
