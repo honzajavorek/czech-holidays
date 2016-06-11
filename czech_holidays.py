@@ -32,6 +32,7 @@ class Holidays(list):
     def __init__(self, year=None):
         year = year or date.today().year
         easter = calculate_easter(year) + timedelta(1)
+        easter_friday = easter - timedelta(3)
 
         self.extend((
             Holiday(
@@ -50,7 +51,7 @@ class Holidays(list):
                 "Easter Monday",
             ),
             Holiday(
-                easter.year, easter.month, easter.day - 3,
+                easter_friday.year, easter_friday.month, easter_friday.day,
                 "Velký pátek",
                 "Good Friday",
             ),
