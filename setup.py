@@ -19,9 +19,12 @@ meta_file_contents = io.open(meta_file, encoding='utf-8').read()
 meta = dict(re.findall(r'__([^_]+)__ = \'([^\']*)\'', meta_file_contents))
 
 
+def command(cmd):
+    return subprocess.check_call(shlex.split(cmd))
+
+
 # release a version, publish to GitHub and PyPI
 if sys.argv[-1] == 'publish':
-    command = lambda cmd: subprocess.check_call(shlex.split(cmd))
     command('git tag v' + meta['version'])
     command('git push --tags origin master:master')
     command('python setup.py sdist bdist_wheel upload')

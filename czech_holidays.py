@@ -3,16 +3,15 @@
 
 from __future__ import unicode_literals
 
+from datetime import date, timedelta
+from dateutil.easter import easter as calculate_easter
+
 
 __title__ = 'czech-holidays'
 __version__ = '0.1.1'
 __author__ = 'Honza Javorek'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2013 Honza Javorek'
-
-
-from datetime import date, timedelta
-from dateutil.easter import easter as calculate_easter
 
 
 __all__ = ('Holiday', 'Holidays', 'holidays')
