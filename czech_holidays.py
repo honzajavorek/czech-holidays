@@ -8,7 +8,7 @@ from dateutil.easter import easter as calculate_easter
 
 
 __title__ = 'czech-holidays'
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 __author__ = 'Honza Javorek'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2013 Honza Javorek'
