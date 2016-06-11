@@ -28,7 +28,7 @@ if sys.argv[-1] == 'publish':
     command = lambda cmd: subprocess.check_call(shlex.split(cmd))
     command('git tag v' + meta['version'])
     command('git push --tags origin master:master')
-    command('python setup.py sdist upload')
+    command('python setup.py sdist bdist_wheel upload')
     sys.exit()
 
 
