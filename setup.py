@@ -25,6 +25,7 @@ def command(cmd):
 
 # release a version, publish to GitHub and PyPI
 if sys.argv[-1] == 'publish':
+    command('git commit -am v' + meta['version'])
     command('git tag v' + meta['version'])
     command('git push --tags origin master:master')
     command('python setup.py sdist bdist_wheel upload')
