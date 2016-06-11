@@ -7,11 +7,7 @@ import io
 import sys
 import shlex
 import subprocess
-
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup  # NOQA
+from setuptools import setup
 
 
 base_path = os.path.dirname(__file__)
@@ -38,7 +34,7 @@ setup(
     description='Czech holidays on PyPI.',
     long_description=io.open('README.rst', encoding='utf-8').read(),
     author=meta['author'],
-    author_email='jan.javorek@gmail.com',
+    author_email='mail@honzajavorek.cz',
     url='https://github.com/honzajavorek/czech-holidays',
     license=open('LICENSE').read(),
     py_modules=['czech_holidays'],
@@ -46,7 +42,6 @@ setup(
     install_requires=['python-dateutil'],
     zip_safe=False,
     classifiers=(
-        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
