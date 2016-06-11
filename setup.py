@@ -43,12 +43,5 @@ setup(
     py_modules=['czech_holidays'],
     include_package_data=True,
     install_requires=['python-dateutil'],
-    zip_safe=False,
-    classifiers=(
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 3',
-    )
+    zip_safe=False
 )
