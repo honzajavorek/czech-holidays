@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/Edelstadt/czech-holidays.svg?branch=patch-2)](https://travis-ci.org/Edelstadt/czech-holidays)
 Czech Holidays
 ==============
 
