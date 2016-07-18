@@ -1,3 +1,5 @@
+.. image:: https://travis-ci.org/honzajavorek/czech-holidays.svg
+   :target: https://travis-ci.org/honzajavorek/czech-holidays
 
 Czech Holidays
 ==============

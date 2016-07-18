@@ -3,16 +3,15 @@
 
 from __future__ import unicode_literals
 
+from datetime import date, timedelta
+from dateutil.easter import easter as calculate_easter
+
 
 __title__ = 'czech-holidays'
-__version__ = '0.0.4'
+__version__ = '0.1.3'
 __author__ = 'Honza Javorek'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2013 Honza Javorek'
-
-
-from datetime import date, timedelta
-from dateutil.easter import easter as calculate_easter
 
 
 __all__ = ('Holiday', 'Holidays', 'holidays')
@@ -32,6 +31,7 @@ class Holidays(list):
     def __init__(self, year=None):
         year = year or date.today().year
         easter = calculate_easter(year) + timedelta(1)
+        easter_friday = easter - timedelta(3)
 
         self.extend((
             Holiday(
@@ -48,6 +48,11 @@ class Holidays(list):
                 easter.year, easter.month, easter.day,
                 "Velikonoční pondělí",
                 "Easter Monday",
+            ),
+            Holiday(
+                easter_friday.year, easter_friday.month, easter_friday.day,
+                "Velký pátek",
+                "Good Friday",
             ),
             Holiday(
                 year, 5, 1,
