@@ -8,7 +8,7 @@ from dateutil.easter import easter as calculate_easter
 
 
 __title__ = 'czech-holidays'
-__version__ = '0.1.4'
+__version__ = '0.1.5'
 __author__ = 'Honza Javorek'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2022 Honza Javorek'
@@ -107,7 +107,7 @@ class Holidays(list):
         ))
 
         self.easter = self[2]
-        self.christmas = self[10]
+        self.christmas = self[11]
 
 
 holidays = Holidays()
