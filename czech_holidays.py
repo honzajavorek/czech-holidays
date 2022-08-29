@@ -1,101 +1,102 @@
+from collections import namedtuple
+
 from datetime import date, timedelta
 from dateutil.easter import easter as calculate_easter
 
 
-__all__ = ('Holiday', 'Holidays', 'holidays')
+__all__ = ('Holiday', 'czech_holidays', 'czech_easter', 'czech_christmas')
 
 
-class Holiday(date):
-
-    def __new__(cls, year, month, day, name, name_en):
-        obj = date.__new__(cls, year, month, day)
-        obj.name = name
-        obj.name_en = name_en
-        return obj
+LAST_LEGISLATIVE_CHANGE = 2016
 
 
-class Holidays(list):
-
-    def __init__(self, year=None):
-        year = year or date.today().year
-        easter = calculate_easter(year) + timedelta(1)
-        easter_friday = easter - timedelta(3)
-
-        self.extend((
-            Holiday(
-                year, 1, 1,
-                "Nový rok",
-                "New Year's Day",
-            ),
-            Holiday(
-                year, 1, 1,
-                "Den obnovy samostatného českého státu",
-                "Restoration Day of the Independent Czech State",
-            ),
-            Holiday(
-                easter.year, easter.month, easter.day,
-                "Velikonoční pondělí",
-                "Easter Monday",
-            ),
-            Holiday(
-                easter_friday.year, easter_friday.month, easter_friday.day,
-                "Velký pátek",
-                "Good Friday",
-            ),
-            Holiday(
-                year, 5, 1,
-                "Svátek práce",
-                "Labour Day",
-            ),
-            Holiday(
-                year, 5, 8,
-                "Den vítězství",
-                "Liberation Day",
-            ),
-            Holiday(
-                year, 7, 5,
-                "Den slovanských věrozvěstů Cyrila a Metoděje",
-                "Saints Cyril and Methodius Day",
-            ),
-            Holiday(
-                year, 7, 6,
-                "Den upálení mistra Jana Husa",
-                "Jan Hus Day",
-            ),
-            Holiday(
-                year, 9, 28,
-                "Den české státnosti",
-                "St. Wenceslas Day (Czech Statehood Day)",
-            ),
-            Holiday(
-                year, 10, 28,
-                "Den vzniku samostatného československého státu",
-                "Independent Czechoslovak State Day",
-            ),
-            Holiday(
-                year, 11, 17,
-                "Den boje za svobodu a demokracii",
-                "Struggle for Freedom and Democracy Day",
-            ),
-            Holiday(
-                year, 12, 24,
-                "Štědrý den",
-                "Christmas Eve",
-            ),
-            Holiday(
-                year, 12, 25,
-                "1. svátek vánoční",
-                "Christmas Day",
-            ),
-            Holiday(
-                year, 12, 26,
-                "2. svátek vánoční",
-                "St. Stephen's Day (The Second Christmas Day)",
-            ),
-        ))
-
-        self.easter = self[2]
-        self.christmas = self[11]
+Holiday = namedtuple('Holiday', 'date, name, name_en')
 
 
-holidays = Holidays()
+def czech_easter(year):
+    return Holiday(
+        calculate_easter(year) + timedelta(days=1),
+        "Velikonoční pondělí",
+        "Easter Monday",
+    )
+
+
+def czech_christmas(year):
+    return Holiday(
+        date(year, 12, 24),
+        "Štědrý den",
+        "Christmas Eve",
+    )
+
+
+def czech_holidays(year):
+    if year < LAST_LEGISLATIVE_CHANGE:
+        raise NotImplementedError(f"Unable to generate data for years prior to {LAST_LEGISLATIVE_CHANGE} (last legislative change to the list of Czech public holidays)")
+
+    easter = czech_easter(year)
+    christmas = czech_christmas(year)
+
+    return [
+        Holiday(
+            date(year, 1, 1),
+            "Nový rok",
+            "New Year's Day",
+        ),
+        Holiday(
+            date(year, 1, 1),
+            "Den obnovy samostatného českého státu",
+            "Restoration Day of the Independent Czech State",
+        ),
+        easter,
+        Holiday(
+            easter.date - timedelta(days=3),
+            "Velký pátek",
+            "Good Friday",
+        ),
+        Holiday(
+            date(year, 5, 1),
+            "Svátek práce",
+            "Labour Day",
+        ),
+        Holiday(
+            date(year, 5, 8),
+            "Den vítězství",
+            "Liberation Day",
+        ),
+        Holiday(
+            date(year, 7, 5),
+            "Den slovanských věrozvěstů Cyrila a Metoděje",
+            "Saints Cyril and Methodius Day",
+        ),
+        Holiday(
+            date(year, 7, 6),
+            "Den upálení mistra Jana Husa",
+            "Jan Hus Day",
+        ),
+        Holiday(
+            date(year, 9, 28),
+            "Den české státnosti",
+            "St. Wenceslas Day (Czech Statehood Day)",
+        ),
+        Holiday(
+            date(year, 10, 28),
+            "Den vzniku samostatného československého státu",
+            "Independent Czechoslovak State Day",
+        ),
+        Holiday(
+            date(year, 11, 17),
+            "Den boje za svobodu a demokracii",
+            "Struggle for Freedom and Democracy Day",
+        ),
+        christmas,
+        Holiday(
+            christmas.date + timedelta(days=1),
+            "1. svátek vánoční",
+            "Christmas Day",
+        ),
+        Holiday(
+            christmas.date + timedelta(days=2),
+            "2. svátek vánoční",
+            "St. Stephen's Day (The Second Christmas Day)",
+        ),
+    ]

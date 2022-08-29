@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "czech-holidays"
-version = "0.2.0"
+version = "1.0.0"
 description = "Python package with Czech public holidays"
 authors = ["Honza Javorek <mail@honzajavorek.cz>"]
 license = "MIT"
@@ -17,4 +17,5 @@ pytest = "*"
 [tool.pytest.ini_options]
 python_files = "test_*.py"
 testpaths = "."
-addopts = "--ff"
+addopts = "--ff --doctest-glob=README.rst"
+doctest_optionflags = "NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL"
