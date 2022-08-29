@@ -66,7 +66,8 @@ Two shortcuts are available:
     Holiday(date=datetime.date(2022, 12, 24), name='Štědrý den', name_en='Christmas Eve')
 
 The aim of this library is to simplify work with Czech public holidays in current
-applications, thus **it does not provide any historical data**:
+applications, thus **it does not provide any historical data**. If provided with
+a year prior to the last legislative change to the list, the library raises an error:
 
 .. code:: python
 
