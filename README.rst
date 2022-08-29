@@ -73,6 +73,19 @@ applications, thus **it does not provide any historical data**. For example,
 *Restoration Day of the Independent Czech State* is celebrated since 2000,
 but the library returns it also for, let's say, 1978.
 
+Development
+-----------
+
+Install using `poetry <https://python-poetry.org/>`_::
+
+    git clone git@github.com:honzajavorek/czech-holidays.git
+    cd czech-holidays
+    poetry install
+
+Then run tests::
+
+    pytest
+
 License: MIT
 ------------
 
