@@ -8,8 +8,14 @@ readme = "README.rst"
 repository = "https://github.com/honzajavorek/czech-holidays"
 
 [tool.poetry.dependencies]
-python = "*"
+python = ">=3.7, <4"
 python-dateutil = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
+requests = ">=2.27"
+
+[tool.pytest.ini_options]
+python_files = "test_*.py"
+testpaths = "."
+addopts = "--ff"
