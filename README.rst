@@ -7,7 +7,7 @@ Python package with `Czech public holidays <https://en.wikipedia.org/wiki/Public
 Installation
 ------------
 
-The Cheese Shop::
+From PyPI::
 
     pip install czech-holidays
 
