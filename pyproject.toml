@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "czech-holidays"
+version = "0.1.4"
+description = "Python package with Czech public holidays"
+authors = ["Honza Javorek <mail@honzajavorek.cz>"]
+license = "MIT"
+readme = "README.rst"
+repository = "https://github.com/honzajavorek/czech-holidays"
+
+[tool.poetry.dependencies]
+python = "*"
+python-dateutil = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"

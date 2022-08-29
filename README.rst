@@ -76,6 +76,6 @@ but the library returns it also for, let's say, 1978.
 License: MIT
 ------------
 
-© 2013 Jan Javorek <jan.javorek@gmail.com>
+© 2022 Honza Javorek <mail@honzajavorek.cz>
 
 This work is licensed under `MIT license <https://en.wikipedia.org/wiki/MIT_License>`_.
