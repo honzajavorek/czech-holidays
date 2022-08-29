@@ -40,6 +40,21 @@ The function accepts year as a single argument and returns a list of `named tupl
     >>> holidays[0].name_en
     "New Year's Day"
 
+Albeit named, it's still just a tuple:
+
+.. code:: python
+
+    >>> holidays[0][0]
+    datetime.date(2022, 1, 1)
+    >>> holidays[0][1]
+    'Nový rok'
+    >>> holidays[0][2]
+    "New Year's Day"
+    >>> tuple(holidays[0])
+    (datetime.date(2022, 1, 1), 'Nový rok', "New Year's Day")
+    >>> holidays[0] < holidays[5]
+    True
+
 Two shortcuts are available:
 
 .. code:: python
